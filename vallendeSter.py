@@ -14,7 +14,8 @@ frame.strip.global_brightness=31
 #  time.sleep(1)
 teller =0
 while 1:
-  kleur = 0xff0000 #(0xff | (random.randint(0,255)<<8)|(random.randint(0,255)))
+  kleur1 = 0xff0000 #(0xff | (random.randint(0,255)<<8)|(random.randint(0,255)))
+  kleur2 = 0x0000ff
   for y in range(16):    
     for x in range(16):      
       for z in range(100,0,-25):
@@ -22,7 +23,8 @@ while 1:
           k=x
           x=y
           y=k
-        frame.kleurRechthoek(kleur,x,x,y,y,z)
+        frame.kleurRechthoek(kleur1,x,x,y,y,z)
+        frame.kleurRechthoek(kleur2,16-y,16-y,16-x,16-x,z)   
         #frame.kleurRechthoek(kleur,x,y+1,x,y+1,z)
         #frame.kleurRechthoek(kleur,x,y+2,x,y+2,z)      
         frame.strip.show()

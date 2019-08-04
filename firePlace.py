@@ -32,7 +32,7 @@ class FirePlace:
         self.frame.kleurRechthoek(kleur,int(random.randint(self.onderband,self.frame.hoogte-self.onderband)),x,self.frame.hoogte,x,bright) 
         print(bright)
       self.frame.strip.show()
-      time.sleep(float(random.randrange(200,500))/1000)
+      time.sleep(float(random.randrange(20,50))/1000)
       
     
 fireplace = FirePlace()

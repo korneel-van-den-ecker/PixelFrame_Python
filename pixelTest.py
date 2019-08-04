@@ -4,7 +4,7 @@ import math
 import random
 
 frame = pixelFrame.Frame(16,16)
-frame.strip.global_brightness=1
+frame.strip.global_brightness=31
 #for x in range(100):
 #  frame.kleurRechthoek(2,2,13,13,0x0000ff)
 #  frame.strip.show()

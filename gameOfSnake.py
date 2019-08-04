@@ -14,6 +14,7 @@ class SnakeGame:
     self.tellers = [] 
     self.snakes = [] 
     self.maakSnakes(aantalSnakes)
+    
         
   def maakSnakes(self,aantalSnakes):
     #snakes aanmaken
@@ -26,25 +27,27 @@ class SnakeGame:
       self.tellers.append(int(255/aantalSnakes*x))
       
   def startAnimatie(self):    
-    while 1:    
-      try:
-        self.frame.strip.clear_strip()
+    teller = 0
+    while 1:
+      self.frame.strip.clear_strip()
         
-        #bepalen van kleur        
-        self.kleurVerloop()
+      #bepalen van kleur        
+      self.kleurVerloop()
         
-        #bepalen van lengte en positie
-        for x in range(len(self.snakes)):    
-          beweging = random.choice(list(Move))
-          self.snakes[x].checkGrens = True
-          self.snakes[x].maxLenght = 8          
-          self.snakes[x].move(beweging,True,False)
-        self.frame.strip.show()  
-        time.sleep(float(random.randrange(5,20))/1000)
-        
-      except KeyboardInterrupt:  # Ctrl-C can halt the light program
-        self.close_clean()       
-    
+      #bepalen van lengte en positie
+      for x in range(len(self.snakes)):
+        if teller == 0:
+          beweging = random.choice(list(Move))        
+        self.snakes[x].checkGrens = False
+        #self.snakes[x].maxLenght = 88          
+        self.snakes[x].move(beweging,True,False)
+      self.frame.strip.show()  
+      #time.sleep(float(random.randrange(500,550))/1000)
+      if teller == 5:
+        teller = 0
+      else:
+        teller = teller + 1    
+
   def kleurVerloop(self):
     for x in range(len(self.snakes)):
       if self.tellers[x] <255:  
@@ -64,8 +67,8 @@ class SnakeGame:
     
                   
 frame = pixelFrame.Frame(16,16)
-frame.strip.max_speed_hz=150000
-frame.strip.global_brightness=15
+#frame.strip.max_speed_hz=150000
+frame.strip.global_brightness=1
 game = SnakeGame(2,frame)
 
 game.startAnimatie()

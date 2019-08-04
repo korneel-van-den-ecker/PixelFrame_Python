@@ -41,17 +41,18 @@ class Snake:
     self.selectedMove = Move.RIGHT
     self.speed = 1            
     self.checkGrens = True
-    self.maxLengte = 20
+    self.maxLengte =10
     self.groei = False
     self.krimp = False
+    self.laatsteMove = Move.UP
   
       
-  def move(self,move,groei,show = True,):
+  def move(self,move,groei,show = True,):    
     self.groei = groei
     nieuweKop = (0,0)
     oudeKop = self.pixelLijst[len(self.pixelLijst)-1]  
     #De beweging toepassen en nieuwe kop berekenen  
-    if move == Move.UP:
+    if move == Move.UP and self.laatsteMove != Move.DOWN:
       if oudeKop[0] == 0:
         if self.checkGrens:
           nieuweKop = oudeKop
@@ -60,7 +61,7 @@ class Snake:
       else:
         nieuweKop = (oudeKop[0]-1,oudeKop[1])
         
-    if move == Move.DOWN:
+    if move == Move.DOWN and self.laatsteMove != Move.UP:
       if oudeKop[0] == self.frame.hoogte-1:
         if self.checkGrens:
           nieuweKop = oudeKop
@@ -69,7 +70,7 @@ class Snake:
       else:
         nieuweKop = (oudeKop[0]+1,oudeKop[1])
 
-    if move == Move.RIGHT:
+    if move == Move.RIGHT and self.laatsteMove != Move.LEFT:
       if oudeKop[1] == self.frame.breedte-1:
         if self.checkGrens:
           nieuweKop = oudeKop
@@ -78,7 +79,7 @@ class Snake:
       else:
         nieuweKop = (oudeKop[0],oudeKop[1]+1)
     
-    if move == Move.LEFT:
+    if move == Move.LEFT and self.laatsteMove != Move.RIGHT:
       if oudeKop[1] == 0:
         if self.checkGrens:
           nieuweKop = oudeKop
@@ -101,6 +102,7 @@ class Snake:
       del self.pixelLijst[0]
       #print(self.pixelLijst)
     self.addToFrame(show)
+    self.laatsteMove = move
   
   def addToFrame(self,show = True):
     #self.frame.strip.clear_strip()
@@ -108,7 +110,7 @@ class Snake:
     for x in range(len(self.pixelLijst)):          
       self.frame.zetKleur(self.pixelLijst[x][0],self.pixelLijst[x][1],self.kleur,100)
     #Toon het voedsel
-    self.frame.zetKleur(self.voedsel[0],self.voedsel [1],self.voedselKleur,100  )
+    self.frame.zetKleur(self.voedsel[0],self.voedsel [1],self.voedselKleur,100)
     if show:
       self.frame.strip.show()
 
@@ -118,7 +120,7 @@ class Snake:
 
   def CheckMaxLengte(self):
     if len(self.pixelLijst)<= self.maxLengte :
-      self.groei == True
+      self.groei = True
     else:
       self.groei = False
       
