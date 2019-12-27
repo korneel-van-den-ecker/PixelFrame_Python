@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
-from snake import*
-from pixelFrame import*
+from snake import Snake
+from snake import Move
+from pixelFrame import Frame
 import random
 import time
-import keyboard
+#import keyboard
 
 #keyboard.write('The quick brown fox jumps over the lazy dog.')
 
-frame = pixelFrame.Frame(16,16)
-frame.strip.max_speed_hz=800000
+frame = Frame(16,16)
+frame.strip.max_speed_hz=1000000
 frame.strip.global_brightness=100
 snakes = [Snake(frame,4,2,0xff00ff),Snake(frame,4,2,0xffff00),Snake(frame,4,2,0x00ffff)]
 
@@ -21,6 +22,6 @@ while 1:
   frame.strip.show()  
   time.sleep(float(random.randrange(1,10))/100)
   
-snake.frame.strip.clear_strip_show()
-print(snake)
+frame.strip.clear_strip_show()
+print(snakes)
 

@@ -4,7 +4,7 @@ from driver import apa102
 import time
 
 # Initialize the library and the strip
-strip = apa102.APA102(num_led=430, global_brightness=20, mosi = 10, sclk = 11,
+strip = apa102.APA102(num_led=256, global_brightness=20, mosi = 10, sclk = 11,
                                   order='rbg')
 
 # Turn off all pixels (sometimes a few light up when the strip gets power)

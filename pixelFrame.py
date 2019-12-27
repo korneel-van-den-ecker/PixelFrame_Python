@@ -52,7 +52,7 @@ class Frame:
         channels1[2] += 1
       if channels1[2] > channels2[2]:
         channels1[2] -= 1
-      self.kleurRechthoek(apa102.APA102.combine_color(channels1[0],channels1[1],channels1[2]),startX,startY,eindX,eindY)
+      self.kleurRechthoek(apa102.APA102.combine_color(channels1[0],channels1[1],channels1[2]),startX,startY,eindX,eindY,50)
       self.strip.show()
       #self.strip.clear_strip()
     print("EFFECT GEDAAN")

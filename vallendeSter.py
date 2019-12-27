@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-from snake import*
-from pixelFrame import*
-from xbox import*
+from snake import Snake
+from pixelFrame import Frame
+#from xbox import*
 import random
 import time
-import keyboard
+#import keyboard
 
-frame = pixelFrame.Frame(16,16)
+frame = Frame(16,16)
 frame.strip.global_brightness=31
 #for x in range(100):
 #  frame.kleurRechthoek(2,2,13,13,0x0000ff)
