@@ -12,7 +12,7 @@ import time
 class FirePlace:
   def __init__(self):
     self.frame = Frame(16,16)
-    self.frame.strip.max_speed_hz=1500000
+    self.frame.strip.max_speed_hz=15000000
     self.frame.strip.global_brightness=31
     self.onderband = 4
   def start(self):

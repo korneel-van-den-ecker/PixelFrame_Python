@@ -6,8 +6,7 @@ import pixelFrame
 from enum import Enum
 
 frame = pixelFrame.Frame(16,16)
-frame.strip.max_speed_hz=8000000
-frame.strip.global_brightness=31
+frame.strip.global_brightness=1
 kleur = 0x0000ff
 kleur2 = 0xff0000
 bright = 100

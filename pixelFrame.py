@@ -20,9 +20,9 @@ class Frame:
   
   def zetKleur(self,x,y,kleur,brightness):
     #de x coordinaat omdraaien bij even rij
-    if (x % 2) != 0 :
-      y = self.breedte - 1 - y
-    nummer = ((x*self.breedte)+y)
+    if (y % 2) != 0 :
+      x = self.breedte - 1 - x
+    nummer = ((y*self.breedte)+x)
     #print(kleur)
     self.strip.set_pixel_rgb(nummer,kleur,brightness)  
 
