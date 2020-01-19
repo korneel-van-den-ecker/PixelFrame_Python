@@ -36,17 +36,17 @@ while 1:
   kleur2 = 0x0000ff
   for y in range(4):    
     if y == 0:    
-      frame.kleurRechthoek(kleur1,0,0,7,15,1)
-      frame.kleurRechthoek(kleur2,8,0,15,15,1)
+      frame.kleurRechthoek(kleur1,0,0,7,15,100)
+      frame.kleurRechthoek(kleur2,8,0,15,15,100)
     if y == 1:
-      frame.kleurRechthoek(kleur2,0,0,15,7,1)
-      frame.kleurRechthoek(kleur1,0,8,15,15,1)
+      frame.kleurRechthoek(kleur2,0,0,15,7,100)
+      frame.kleurRechthoek(kleur1,0,8,15,15,100)
     if y == 2:
-      frame.kleurRechthoek(kleur2,0,0,7,15,1)
-      frame.kleurRechthoek(kleur1,8,0,15,15,1)
+      frame.kleurRechthoek(kleur2,0,0,7,15,100)
+      frame.kleurRechthoek(kleur1,8,0,15,15,100)
     if y == 3:
-      frame.kleurRechthoek(kleur2,0,0,15,7,1)
-      frame.kleurRechthoek(kleur1,0,8,15,15,1)
+      frame.kleurRechthoek(kleur2,0,0,15,7,100)
+      frame.kleurRechthoek(kleur1,0,8,15,15,100)
     frame.strip.show()
-    time.sleep(0.5)
+    time.sleep(0.1)
     frame.strip.clear_strip()
