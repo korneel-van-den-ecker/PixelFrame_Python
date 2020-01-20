@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-from snake import*
-from pixelFrame import*
-from xbox import*
+from snake import Snake
+from pixelFrame import Frame
+from snake import Move
+# from xbox import Xbox
 import random
 import time
 import keyboard
@@ -19,7 +20,7 @@ class SnakeGame:
   def maakSnakes(self,aantalSnakes):
     #snakes aanmaken
     for x in range(aantalSnakes):
-      snake = Snake(frame,4,2,0xff0000)
+      snake = Snake(frame,2,2,0xff0000)
       self.snakes.append(snake)
     
     #tellers instellen
@@ -40,9 +41,9 @@ class SnakeGame:
           beweging = random.choice(list(Move))        
         self.snakes[x].checkGrens = False
         #self.snakes[x].maxLenght = 88          
-        self.snakes[x].move(beweging,True,False)
+        self.snakes[x].move(beweging,False,False)
       self.frame.strip.show()  
-      #time.sleep(float(random.randrange(500,550))/1000)
+      time.sleep(float(random.randrange(50,55))/1000)
       if teller == 5:
         teller = 0
       else:
@@ -66,10 +67,10 @@ class SnakeGame:
     self.frame.strip.cleanup()   
     
                   
-frame = pixelFrame.Frame(16,16)
+frame = Frame(16,16)
 #frame.strip.max_speed_hz=150000
 frame.strip.global_brightness=1
-game = SnakeGame(2,frame)
+game = SnakeGame(1,frame)
 
 game.startAnimatie()
   

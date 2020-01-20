@@ -122,5 +122,5 @@ class Snake:
     if len(self.pixelLijst)<= self.maxLengte :
       self.groei = True
     else:
-      self.groei = False
+      self.groei = True
       

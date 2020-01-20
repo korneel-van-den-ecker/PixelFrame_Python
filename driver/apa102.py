@@ -71,7 +71,7 @@ class APA102:
     LED_START = 0b11100000 # Three "1" bits, followed by 5 brightness bits
 
     def __init__(self, num_led, global_brightness=MAX_BRIGHTNESS,
-                 order='rgb', mosi=10, sclk=11, max_speed_hz=800000):
+                 order='rgb', mosi=10, sclk=11, max_speed_hz=1500000):
         """Initializes the library.
         
         """
