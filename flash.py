@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from pixelFrame import Frame
-from sinus import Sinus
+from functieGenerator import FunctieGenerator, Functie
 import random
 import time
 import math
@@ -14,7 +14,15 @@ breedte = frame.breedte
 teller = 0
 teller1 = 0
 #sinussen = [Sinus(1,2.5,frame)]#,Sinus(2,1/22,frame)]#,Sinus(1,1,frame)]        
-sinus = Sinus(1,2.5,frame)
+""" 
+sinus = Sinus(1,2,frame)
+sinus.brightnessEffect = False
+sinus.flikkeringEffect = False
+sinus.startAnimatie("sin",1.0,0.0)
+ """
 
-sinus.startAnimatie("sin")
+fg = FunctieGenerator(2,2,frame)
 
+fg.VoegFunctieToe(Functie("sin",1/2,0))
+fg.VoegFunctieToe(Functie("sin",1,0))
+fg.startAnimatie()

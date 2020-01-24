@@ -38,12 +38,19 @@ while 1:
   #frame.kleurEffect(0xff0000,0x0000ff,0,0,15,15)
   #for x in range(50):
 
-  xOffset =4 # random.randint(0,15)
-  yOffset =4  #random.randint(0,15)
+  xOffset =0 # random.randint(0,15)
+  yOffset =0  #random.randint(0,15)
   x = teller%(16-xOffset) + xOffset
   y = teller%(16-yOffset) + yOffset
-  frame.zetKleur(random.randint(xOffset,x),random.randint(yOffset,y),kleur,tellerBright)
-  frame.strip.show()
-  #time.sleep(0.5)
-  #frame.strip.clear_strip()
+  frame.zetKleur(random.randint(xOffset,x),random.randint(yOffset,y),kleur,1)
+  frame.zetKleur(random.randint(xOffset,x),random.randint(yOffset,y),kleur,1)
+  frame.zetKleur(random.randint(xOffset,x),random.randint(yOffset,y),kleur,1)
+  frame.zetKleur(random.randint(xOffset,x),random.randint(yOffset,y),kleur,1)
+  frame.zetKleur(random.randint(xOffset,x),random.randint(yOffset,y),kleur,1)
+  frame.zetKleur(random.randint(xOffset,x),random.randint(yOffset,y),kleur,1)
+  frame.zetKleur(random.randint(xOffset,x),random.randint(yOffset,y),kleur,1)
+
+  frame.show()
+  time.sleep(0.5)
+  frame.strip.clear_strip()
   #time.sleep(0.05)

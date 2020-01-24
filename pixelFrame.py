@@ -18,6 +18,10 @@ class Frame:
     # Initialize the library and the strip
     self.strip = apa102.APA102(num_led=(breedte*hoogte), global_brightness=31, mosi = 10, sclk = 11,order='rgb')
   
+
+  def show(self):
+    self.strip.show()
+
   def zetKleur(self,x,y,kleur,brightness):
     #de x coordinaat omdraaien bij even rij
     if (y % 2) != 0 :
