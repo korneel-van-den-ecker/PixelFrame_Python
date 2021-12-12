@@ -21,8 +21,8 @@ class FunctieGenerator:
         self.brightTeller = 0.0
         self.brightRichting = True
         self.aantalFrame = 0
-        self.kleurBovenGrafiek = 0xff00ff
-        self.kleurOnderGrafiek = 0x00ff00
+        self.kleurBovenGrafiek = 0xff0000
+        self.kleurOnderGrafiek = 0x0000ff
         self.kleurLijn = 0x000000
         self.start = True
         self.teller = 0

@@ -15,11 +15,13 @@ sinus.startAnimatie("sin",1.0,0.0) """
 
 
 # periode,zoom
-fg = FunctieGenerator(1, 2, frame)
-fg.flikkeringEffect = True
-#fg.brightnessEffect = True
+fg = FunctieGenerator(1, 1, frame)
+#fg.flikkeringEffect = True
+fg.brightnessEffect = True
 
 # amplitude fasedaraai
 #fg.VoegFunctieToe(Functie("sin", 2, 1))
-fg.VoegFunctieToe(Functie("sin", 1, 1))
+fg.VoegFunctieToe(Functie("sin", 4, 1))
+fg.VoegFunctieToe(Functie("sin", 4, 2))
+#fg.VoegFunctieToe(Functie("cos", 1, 1))
 fg.startAnimatie()

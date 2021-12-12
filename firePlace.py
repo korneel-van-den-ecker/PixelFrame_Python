@@ -32,6 +32,6 @@ class FirePlace:
         print(bright)
       self.frame.strip.show()
       time.sleep(float(random.randrange(40,80))/1000)  
-fireplace = FirePlace()
-fireplace.start()
+#fireplace = FirePlace()
+#fireplace.start()
 
