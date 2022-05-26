@@ -48,7 +48,7 @@ class Snake:
   
       
   def move(self,move,groei,show = True,):    
-    self.groei = groei
+    #self.groei = groei
     nieuweKop = (0,0)
     oudeKop = self.pixelLijst[len(self.pixelLijst)-1]  
     #De beweging toepassen en nieuwe kop berekenen  

@@ -61,6 +61,9 @@ class Frame:
       #self.strip.clear_strip()
     print("EFFECT GEDAAN")
       #time.sleep(0.01)
+  def release(self):
+    self.strip.cleanup()
+
   
     
   

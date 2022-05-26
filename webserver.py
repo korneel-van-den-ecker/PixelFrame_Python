@@ -5,16 +5,20 @@ from firePlace import FirePlace
 
 hostName = "localhost"
 serverPort = 8080
+firePlace = FirePlace()
 
 class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
         self.send_header("Content-type", "text/html")
         self.end_headers()
-        if self.path == "/pixel":
-            print(self.path)
-            firePlace = FirePlace()
+        
+        if self.path == "/pixel/start":
+            print(self.path)            
             firePlace.start()
+        if self.path == "/pixel/stop":
+            print(self.path)            
+            firePlace.stop()
 
         self.wfile.write(bytes("<html><head><title>https://pythonbasics.org</title></head>", "utf-8"))
         self.wfile.write(bytes("<p>Request: %s</p>" % self.path, "utf-8"))
