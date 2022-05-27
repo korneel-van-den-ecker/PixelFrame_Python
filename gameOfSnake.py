@@ -39,11 +39,11 @@ class SnakeGame:
       for x in range(len(self.snakes)):
         if teller == 0:
           beweging = random.choice(list(Move))        
-        self.snakes[x].checkGrens = False
+        self.snakes[x].checkGrens = True
         self.snakes[x].maxLenght = 20          
-        self.snakes[x].move(beweging,False,False)
+        self.snakes[x].move(beweging,True,False)
       self.frame.strip.show()  
-      time.sleep(float(random.randrange(50,55))/1000)
+      #time.sleep(float(random.randrange(50,55))/1000)
       if teller == 5:
         teller = 0
       else:
