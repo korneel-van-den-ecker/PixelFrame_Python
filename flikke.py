@@ -12,7 +12,7 @@ frame = Frame(16,16)
 #  frame.kleurRechthoek(2,2,13,13,0x0000ff)
 #  frame.strip.show()
 #  time.sleep(1)
-teller =0
+teller =0.0001
 """ while 1:
   kleur1 = 0xff0000 #(0xff | (random.randint(0,255)<<8)|(random.randint(0,255)))
   kleur2 = 0x0000ff
@@ -34,6 +34,8 @@ teller =0
 while 1:
   kleur1 = 0xff0000 #(0xff | (random.randint(0,255)<<8)|(random.randint(0,255)))
   kleur2 = 0x0000ff
+  #teller = teller +0.0001
+  #frame.strip.max_speed_hz = frame.strip.max_speed_hz +1
   for y in range(4):    
     if y == 0:    
       frame.kleurRechthoek(kleur1,0,0,7,15,100)
@@ -48,5 +50,5 @@ while 1:
       frame.kleurRechthoek(kleur2,0,0,15,7,100)
       frame.kleurRechthoek(kleur1,0,8,15,15,100)
     frame.strip.show()
-    time.sleep(0.1)
-    frame.strip.clear_strip()
+    #time.sleep(0.15)
+  frame.strip.clear_strip()

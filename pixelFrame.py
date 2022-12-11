@@ -16,7 +16,7 @@ class Frame:
     self.breedte = breedte
     self.hoogte = hoogte
     # Initialize the library and the strip
-    self.strip = apa102.APA102(num_led=(breedte*hoogte), global_brightness=31, mosi = 10, sclk = 11,order='rgb')
+    self.strip = apa102.APA102(num_led=(breedte*hoogte), global_brightness=1, mosi = 10, sclk = 11,order='rgb',max_speed_hz=4000000)
   
 
   def show(self):

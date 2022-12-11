@@ -96,7 +96,7 @@ class Snake:
     else:
       #Hier de nieuwe kop tonen
       self.pixelLijst.append(nieuweKop)
-    self.CheckMaxLengte()
+    #self.CheckMaxLengte()
     if self.groei == False:
       print("GRoei AF")
       del self.pixelLijst[0]
@@ -120,7 +120,7 @@ class Snake:
 
   def CheckMaxLengte(self):
     if len(self.pixelLijst)<= self.maxLengte :
-      self.groei = False
+      self.groei = True
     else:
       self.groei = True
       
