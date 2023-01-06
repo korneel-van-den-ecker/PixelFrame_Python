@@ -36,7 +36,7 @@ class Snake:
       self.pixelLijst.append((x,startPositie))
     self.frame = frame
     self.kleur = kleur
-    self.voedsel = (random.randint(0,15),random.randint(0,15))
+    self.voedsel = (3,4)
     self.voedselKleur = kleur
     self.selectedMove = Move.RIGHT
     self.speed = 1            
@@ -87,20 +87,22 @@ class Snake:
           nieuweKop = (oudeKop[0],self.frame.breedte -1)
       else:
         nieuweKop = (oudeKop[0],oudeKop[1]-1)
+
     #Checken of de nieuwe kop voedsel is
     if self.CheckVoedsel(nieuweKop):
-    ###########################################
-      self.voedsel = (random.randint(0,15),random.randint(0,15))
-      #################################################
       print(self.voedsel)
-    else:
-      #Hier de nieuwe kop tonen
-      self.pixelLijst.append(nieuweKop)
-    #self.CheckMaxLengte()
+      print("gevangen")
+      self.voedsel = (random.randint(0,15),random.randint(0,15))
+    
+    self.pixelLijst.append(nieuweKop)
+    #print("voedsel: ")
+    print(nieuweKop)
+
+    self.CheckMaxLengte()
     if self.groei == False:
-      print("GRoei AF")
+      #print("GRoei AF")
       del self.pixelLijst[0]
-      print(self.pixelLijst)
+      #print(self.pixelLijst)
     self.addToFrame(show)
     self.laatsteMove = move
   
@@ -110,17 +112,17 @@ class Snake:
     for x in range(len(self.pixelLijst)):          
       self.frame.zetKleur(self.pixelLijst[x][1],self.pixelLijst[x][0],self.kleur,100)
     #Toon het voedsel
-    self.frame.zetKleur(self.voedsel[0],self.voedsel [1],self.voedselKleur,100)
+    self.frame.zetKleur(self.voedsel[1],self.voedsel[0],self.voedselKleur,100)
     if show:
       self.frame.strip.show()
 
-  def CheckVoedsel(self,kop):      
-    if self.voedsel == kop:
+  def CheckVoedsel(self,kop):     
+    if self.voedsel == kop:       
+      print("Wat is dat hier")
       return True
 
   def CheckMaxLengte(self):
     if len(self.pixelLijst)<= self.maxLengte :
-      self.groei = True
+      self.groei = False
     else:
-      self.groei = True
-      
+      self.groei = True      

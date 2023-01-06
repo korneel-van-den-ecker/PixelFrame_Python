@@ -11,20 +11,19 @@ gamepad1 = InputDevice('/dev/input/event1')
 
 #prints out device info at start
 print(gamepad1)
-snake = Snake(Frame(16,8),4,5,0xffd007f)
+snake = Snake(Frame(16,16),4,5,0xffd007f)
 volgendeMove = Move.DOWN
 
 def snakeControl():
     global volgendeMove  
     while 1:
-        snake.move(volgendeMove,False,True)
-        time.sleep(0.1)
+        snake.move(volgendeMove,True)
+        time.sleep(0.3)
 
 t1 = Thread(target=snakeControl)
 t1.start()
 
 for event in gamepad1.read_loop():
-    print("Start")  
     if event.code == 17 and event.value == -1:
         volgendeMove = Move.UP
         print("OMHOOG")
